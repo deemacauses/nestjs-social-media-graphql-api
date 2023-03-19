@@ -5,6 +5,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 import config from "config";
 
 import { UserModule } from "./modules/user/user.module";
+import { AuthModule } from "./modules/auth/auth.module";
 import { DatabaseModule } from "./modules/database/database.module";
 
 @Module({
@@ -16,6 +17,7 @@ import { DatabaseModule } from "./modules/database/database.module";
     DatabaseModule,
     ConfigModule.forRoot({ load: [config], isGlobal: true }),
     UserModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
